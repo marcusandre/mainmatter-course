@@ -9,6 +9,15 @@
 // `factorial(2)` to return `2`, and so on.
 //
 // Use only what you learned! No loops yet, so you'll have to use recursion!
+fn factorial(num: i32) -> i32 {
+    match num {
+        0 => 1,
+        1 => 1,
+        _ => factorial(num - 1) * num,
+    }
+    // Alternatively if loops would be allowed
+    // (1..num).rfold(1, |acc, n| acc * (n + 1))
+}
 
 #[cfg(test)]
 mod tests {
